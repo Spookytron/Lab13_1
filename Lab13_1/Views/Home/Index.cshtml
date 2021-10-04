@@ -1,0 +1,41 @@
+﻿@{
+    ViewData["Title"] = "Home Page";
+}
+<style>
+    .warning{font-weight:bold; color:red;}
+</style>
+
+<form id="myform" method="post">
+    <label>First Name:</label><input type="text" id="firstname" name="firstname" /><br />
+    <label>Last Name:</label><input type="text" id="lastname" name="lastname" /><br />
+    <label>Email:</label><input type="text" id="email" name="email" /><br />
+    <label>Password:</label><input type="password" id="password" name="password" /><br />
+    <label>Confirm Password:</label><input type="password" id="confirm" name="confirm" /><br />
+</form>
+<button>Submit!</button>
+<script>
+    function Processform() {
+        let f = document.querySelector('#firstname').value;
+        let l = document.querySelector('#lastname').value;
+        let e = document.querySelector('#email').value;
+        let p = document.querySelector('#password').value;
+        let c = document.querySelector('#confirm').value;
+        if (!f || !l || !e || !p || !c) {
+            document.querySelector('#message').innerText = 'Please fill in all fields.'
+        }
+        else {
+            document.querySelector('#myform').submit();
+        }
+
+    }
+    function ClearMessage() {
+        document.querySelector('#message').innerText = '';
+
+    }
+
+    
+
+
+
+    
+</script>
